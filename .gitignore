@@ -1,0 +1,5 @@
+.planet-wttd
+__pycache__
+*.sqlite3
+teste.xml
+.idea
