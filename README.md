@@ -1,5 +1,7 @@
 # Planet WTTD
 
+https://planet-wttd.herokuapp.com/
+
 ## Como desenvolver?
 
 1. Clone o repositório.
