@@ -6,9 +6,7 @@ from planet_wttd.core.urls import blog_tuple
 
 
 def home(request):
-    g = get_feed_context()
-    print(json.dumps(g, indent=4))
-    return render(request, 'index.html', g)
+    return render(request, 'index.html', {'blogs': get_feed_context()})
 
 
 def get_feed_context():
@@ -18,29 +16,24 @@ def get_feed_context():
     for url in urls:
         feed = parse(url)
 
+        if feed['status'] != 200:
+            continue
         title = feed['feed']['title']
         link = feed['feed']['link']
 
         posts = []
         for post in feed['entries'][:5]:
+            d = {'title': post['title'], 'link': post['link']}
 
-            d = {}
-
-            post_title = post['title']
             post_date = post['updated_parsed']
-            post_date = '{}/{}/{}'.format(post_date.tm_mday,
+            d['date'] = '{}/{}/{}'.format(post_date.tm_mday,
                                           post_date.tm_mon,
                                           post_date.tm_year)
 
-            post_link = post['link']
-
-            d['title'] = post_title
-            d['link'] = post_link
-            d['date'] = post_date
             posts.append(d)
 
         context.append(dict(title=title, link=link, posts=posts))
 
-    return {'blogs': context}
+    return context
 
 
