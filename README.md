@@ -1,5 +1,7 @@
 # Planet WTTD
 
+https://planet-wttd.herokuapp.com/
+
 ## Como desenvolver?
 
 1. Clone o repositório.
@@ -17,4 +19,12 @@ source .planet-wttd/bin/activate
 pip install -r requirements.txt
 cp contrib/env-sample .env
 python manage.py test
+```
+
+### setup.py
+
+Ou se preferir você pode usar o `setup.sh` que ele faz tudo pra você.
+
+```console
+source setup.sh
 ```
