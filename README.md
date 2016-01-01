@@ -21,7 +21,7 @@ cp contrib/env-sample .env
 python manage.py test
 ```
 
-### setup.py
+### setup.sh
 
 Ou se preferir você pode usar o `setup.sh` que ele faz tudo pra você.
 
