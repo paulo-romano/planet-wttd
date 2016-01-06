@@ -21,11 +21,4 @@ cp contrib/env-sample .env
 python manage.py test
 ```
 
-### setup.sh
 
-Ou se preferir você pode baixar o `setup.sh` que ele faz tudo pra você.
-
-```console
-wget --output-document=setup.sh https://goo.gl/fPVKXM
-source setup.sh
-```
